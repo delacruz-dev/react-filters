@@ -6,7 +6,7 @@ module.exports = React.createClass({
 	displayName: 'PriceSelectItem',
 	render: function() {
 		return (
-			<li>I am a price select item</li>
+			<li id="{this.props.id}">{this.props.value}</li>
 		);
 	}
 

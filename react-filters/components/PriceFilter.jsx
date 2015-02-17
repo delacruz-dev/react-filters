@@ -8,7 +8,8 @@ module.exports = React.createClass({
 	render: function() {
 		return (
 			<ul>
-				<PriceSelectItem />
+				<PriceSelectItem id="1" value="I'm the first select item" />
+				<PriceSelectItem id="2" value="I'm the second select item" />
 			</ul>
 		);
 	}
