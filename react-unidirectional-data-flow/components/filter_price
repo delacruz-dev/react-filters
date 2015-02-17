@@ -1,0 +1,4 @@
+var FilterPrice = React.createClass({
+	getInitialState: function(){
+	}
+});

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="build/react.js"></script>
+    <!--<script type="text/jsx" src="components/helloworld.js"></script>-->
+    <script src="build/JSXTransformer.js"></script>
+  </head>
+  <body>
+    <div id="mount-point"></div>
+    <script type="text/jsx">
+      /** @jsx React.DOM */
+      var Saludo = React.createClass({
+      	increment: function(){
+  			this.setState({
+  				count: this.state.count + 1
+  			});
+      	},
+        getInitialState: function(){
+          return{
+            count: 0
+          }
+        }, 
+        render: function(){
+          return (
+            <div class="saludo">
+            	<h1> Count: {this.state.count}</h1>
+            	<button type="button" onClick={this.increment}>Increment</button>
+            </div>
+          );
+        }
+      });
+      React.render(
+        <Saludo name="Dani"/>,
+        document.getElementById('mount-point')
+      );
+    </script>
+  </body>
+</html>
