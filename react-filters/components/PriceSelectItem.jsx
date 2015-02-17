@@ -1,15 +1,12 @@
 /** @jsx React.DOM */
 'use strict'
 var React = require('react')
-var PriceSelectItem = require('./PriceSelectItem')
 
 module.exports = React.createClass({
-	displayName: 'PriceFIlter',
+	displayName: 'PriceSelectItem',
 	render: function() {
 		return (
-			<ul>
-				<PriceSelectItem />
-			</ul>
+			<li>I am a price select item</li>
 		);
 	}
 
