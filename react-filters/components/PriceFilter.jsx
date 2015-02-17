@@ -1,7 +1,7 @@
 /** @jsx React.DOM */
 'use strict'
 var React = require('react')
-var PriceSelectItem = require('./PriceSelectItem')
+var SelectItem = require('./SelectItem')
 
 module.exports = React.createClass({
 	displayName: 'PriceFilter',
@@ -13,7 +13,7 @@ module.exports = React.createClass({
 	render: function() {
 		var prices = [];
 		this.state.prices.forEach(function(price) {
-			prices.push(<PriceSelectItem id={price.id} value={price.value} />);
+			prices.push(<SelectItem id={price.id} value={price.value} />);
 		});
 		return (
 			<ul>{prices}</ul>
