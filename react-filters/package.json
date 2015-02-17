@@ -1,0 +1,25 @@
+{
+  "name": "react-filters",
+  "version": "1.0.0",
+  "description": "Playing with filters components",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Daniel de la Cruz Calvo",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^0.12.2"
+  },
+  "devDependencies": {
+    "http-server": "^0.7.4",
+    "jsx-loader": "^0.12.2",
+    "webpack": "^1.5.3",
+    "webpack-dev-server": "^1.7.0"
+  },
+  "scripts": {
+    "start": "npm run serve | npm run dev",
+    "serve": "./node_modules/.bin/http-server -p 8080",
+    "dev": "webpack-dev-server --progress --colors --port 8090"
+  }
+}
