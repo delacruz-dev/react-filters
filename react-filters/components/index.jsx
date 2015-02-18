@@ -1,12 +1,6 @@
 /** @jsx React.DOM */
 'use strict'
 var React = require('react')
-var PriceFilter = require('./PriceFilter')
-var BuildingTypeFilter = require('./BuildingTypeFilter')
+var Filters = require('./Filters')
 
-
-React.renderComponent(<BuildingTypeFilter />, document.getElementById('building-type--filter'));
-React.renderComponent(<PriceFilter />, document.getElementById('price--filter'));
-
-
-
+React.renderComponent(<Filters />, document.getElementById('filters'));

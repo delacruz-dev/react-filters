@@ -11,17 +11,15 @@ module.exports = React.createClass({
 			buildingTypes: BUILDING_TYPES 
 		};
 	},
-	handleSelect: function(){
-		console.log('Must update the price filter!');
-	},
 	render: function() {
 		var buildingTypes = [];
-		var self = this;
+		var props = this.props;
+		
 		this.state.buildingTypes.forEach(function(buildingType) {
 			buildingTypes.push(
 				<SelectItem id={buildingType.id} 
 							value={buildingType.value}  
-							handleSelect={self.handleSelect} />);
+							handleSelect={props.handleSelect} />);
 		});
 		return (
 			<ul>{buildingTypes}</ul>
