@@ -1,19 +1,23 @@
-from bottle import route, run
+from bottle import route, response, run, hook
 
 @route('/')
 def hello():
 	return "Hello World!"
 
-@route('/real-estate/filters/<building_type:int>', method='GET')
-def get(building_type):
-	if (building_type == 1 ):
-		return { 'transaction_type' : [ { 'id' : 1, 'resource_key' : 'offer' },
-										{ 'id' : 3, 'resource_key' : 'rent' },
-										{ 'id' : 5, 'resource_key' : 'share' },
-										{ 'id' : 8, 'resource_key' : 'vacational_rent' } ],
-			 	 'price_from' : [ { 'value' : 50000 },
-			 			 		  { 'value' : 100000 },
-			 			 		  { 'value' : 150000 } ]
-				}
+@hook('after_request')
+def enable_cors():
+    response.headers['Access-Control-Allow-Origin'] = '*'
+
+@route('/real-estate/filters/building-type', method='GET')
+def buildingType():
+	return { 'buildingTypes': [ { 'id' : 1, 'value' : 'Homes' },
+								{ 'id' : 2, 'value' : 'New Homes' },
+								{ 'id' : 3, 'value' : 'Luxury Homes' },
+								{ 'id' : 4, 'value' : 'Commercial premises' },
+								{ 'id' : 5, 'value' : 'Garages' },
+								{ 'id' : 6, 'value' : 'Land' },
+								{ 'id' : 7, 'value' : 'Offices' },
+								{ 'id' : 8, 'value' : 'Box rooms' }]
+			}
 
 run(host='localhost', port=8091, debug=True, reloader=True)

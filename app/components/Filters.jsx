@@ -4,15 +4,26 @@
 var React = require('react')
 var BuildingTypeFilter = require('./BuildingTypeFilter')
 var PriceFilter = require('./PriceFilter')
+var utils = require('../common/utils')
 
 module.exports = React.createClass({
 	displayName: 'Filters',
 	getInitialState: function() {
-		var element = PRICES.filter(function(n){ return n.buildingType === 1; });
 		return {
-			buildingTypes: BUILDING_TYPES,
-			prices: element[0].prices
+			buildingTypes: [],
+			prices: PRICES.filter(function(n){ return n.buildingType === 1; })[0].prices
 		};
+	},
+	componentWillMount: function() {
+		utils.httpRequest('http://localhost:8091/real-estate/filters/building-type', this.onGetFiltersSuccess, this.onGetFiltersError);
+	},
+	onGetFiltersSuccess: function(responseData){
+		this.setState({
+			buildingTypes: JSON.parse(responseData).buildingTypes
+		});
+	},
+	onGetFiltersError: function(erro){
+		console.log("Get Filters error");
 	},
 	onBuildingTypeChange: function(e){
 		var element = PRICES.filter(function(n){ return n.buildingType == e.target.id; });
@@ -33,18 +44,6 @@ module.exports = React.createClass({
 		);
 	}
 });
-
-
-var BUILDING_TYPES = [ 
-	{ 'id' : 1, 'value' : 'Homes' },
-	{ 'id' : 2, 'value' : 'New Homes' },
-	{ 'id' : 3, 'value' : 'Luxury Homes' },
-	{ 'id' : 4, 'value' : 'Commercial premises' },
-	{ 'id' : 5, 'value' : 'Garages' },
-	{ 'id' : 6, 'value' : 'Land' },
-	{ 'id' : 7, 'value' : 'Offices' },
-	{ 'id' : 8, 'value' : 'Box rooms' }
-];
 
 
 var PRICES = [ { buildingType: 1, prices: [
