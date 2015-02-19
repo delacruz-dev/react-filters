@@ -6,8 +6,9 @@ module.exports = React.createClass({
 	displayName: 'SelectItem',
 	render: function() {
 		return (
-			<li id="{this.props.id}" onClick={this.props.handleSelect}>
-				{this.props.value}
+			<li id={this.props.id} 
+				onClick={this.props.onSelectItem}>
+					{this.props.value}
 			</li>
 		);
 	}

@@ -14,9 +14,8 @@ module.exports = React.createClass({
 			prices: element[0].prices
 		};
 	},
-	onBuildingTypeChange: function(){
-		console.log("changing prices");
-		var element = PRICES.filter(function(n){ return n.buildingType === 2; });
+	onBuildingTypeChange: function(e){
+		var element = PRICES.filter(function(n){ return n.buildingType == e.target.id; });
 		this.setState({
 			prices: element[0].prices 
 		});
@@ -26,7 +25,8 @@ module.exports = React.createClass({
 			<form>
 				<BuildingTypeFilter 
 					buildingTypes={this.state.buildingTypes} 
-					handleSelect={this.onBuildingTypeChange} />
+					onSelectItem={this.onBuildingTypeChange} 
+					ref="buildingType" />
 				<PriceFilter prices={this.state.prices} />
 				<input type='submit' value='Show Results'></input>
 			</form>
