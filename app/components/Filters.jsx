@@ -2,7 +2,7 @@
 'use strict'
 
 var React = require('react')
-var BuildingTypeFilter = require('./BuildingTypeFilter')
+var Selector = require('./Selector')
 var PriceFilter = require('./PriceFilter')
 var utils = require('../common/utils')
 
@@ -34,12 +34,11 @@ module.exports = React.createClass({
 	render: function() {
 		return (
 			<form>
-				<BuildingTypeFilter 
-					buildingTypes={this.state.buildingTypes} 
-					onSelectItem={this.onBuildingTypeChange} 
-					ref="buildingType" />
-				<PriceFilter prices={this.state.prices} />
-				<input type='submit' value='Show Results'></input>
+				<Selector selectItems = {this.state.buildingTypes} 
+						  onSelectItem = {this.onBuildingTypeChange} 
+						  ref = "buildingType" />
+				<PriceFilter prices = {this.state.prices} />
+				<input type = 'submit' value = 'Show Results'></input>
 			</form>
 		);
 	}
