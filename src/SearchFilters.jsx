@@ -28,7 +28,6 @@ module.exports=React.createClass({
 					prices: jsonData.prices.filter(function(n){ 
 						return n.transactionType == 1; 
 					})[0].values
-		
 				});
 			},
 			function(error){
