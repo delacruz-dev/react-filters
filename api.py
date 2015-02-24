@@ -21,24 +21,24 @@ def filters():
             'transactionTypes': [  { 'id' : 1, 'value' : 'Offer' },
                                    { 'id' : 2, 'value' : 'Rent' }],
             'prices' : [ { 'transactionType': 1,
-                           'values': [ { 'id' : 150, 'value' : 'From 150' },
-                                       { 'id' : 300, 'value' : 'From 300' },
-                                       { 'id' : 450, 'value' : 'From 450' },
-                                       { 'id' : 600, 'value' : 'From 600' },
-                                       { 'id' : 700, 'value' : 'From 700' },
-                                       { 'id' : 800, 'value' : 'From 800' },
-                                       { 'id' : 900, 'value' : 'From 900' }
-                                       ]
+                        'values':[ { 'id' : 150000, 'value' : 'From 150.000' },
+                                  { 'id' : 300000, 'value' : 'From 300.000' },
+                                  { 'id' : 450000, 'value' : 'From 450.000' },
+                                  { 'id' : 600000, 'value' : 'From 600.000' },
+                                  { 'id' : 700000, 'value' : 'From 700.000' },
+                                  { 'id' : 800000, 'value' : 'From 800.000' },
+                                  { 'id' : 900000, 'value' : 'From 900.000' }
+                                  ]
                             },
                          { 'transactionType': 2,
-                           'values': [ { 'id' : 150000, 'value' : 'From 150.000' },
-                                       { 'id' : 300000, 'value' : 'From 300.000' },
-                                       { 'id' : 450000, 'value' : 'From 450.000' },
-                                       { 'id' : 600000, 'value' : 'From 600.000' },
-                                       { 'id' : 700000, 'value' : 'From 700.000' },
-                                       { 'id' : 800000, 'value' : 'From 800.000' },
-                                       { 'id' : 900000, 'value' : 'From 900.000' }
-                                       ] } ]
+                        'values': [ { 'id' : 150, 'value' : 'From 150' },
+                                   { 'id' : 300, 'value' : 'From 300' },
+                                   { 'id' : 450, 'value' : 'From 450' },
+                                   { 'id' : 600, 'value' : 'From 600' },
+                                   { 'id' : 700, 'value' : 'From 700' },
+                                   { 'id' : 800, 'value' : 'From 800' },
+                                   { 'id' : 900, 'value' : 'From 900' }
+                                   ] } ]
         }
 
 @route('/real-estate/filters/transaction-type', method='GET')
